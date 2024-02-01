@@ -1,0 +1,15 @@
+numberOfProducts 10
+shelftAmountPerProduct 50
+numberOfShelvingTeams 2
+employeesPerTeam 2
+restockThreshold 45
+restockAmount 30
+customerArrivalMinTime 35
+customerArrivalMaxTime 40
+maxItemsPerCustomer 5
+maxQuantityPerItem 3
+simulationTimeLimit 3
+storageInitialStock 200
+windowWidth 800
+windowHeight 600
+stockAmountPerProduct 200

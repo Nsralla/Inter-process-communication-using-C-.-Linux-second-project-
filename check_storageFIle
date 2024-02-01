@@ -1,0 +1,30 @@
+int check_storage_file(int NUMOFPRODUCTS, int index, int checkOne){
+    
+     // open the file
+        FILE *file = fopen(STORAGE_FILE, "r");
+        if ( file == NULL){
+            perror("fopen (storage file)");
+            exit(EXIT_FAILURE);
+        }
+        // read the file
+        int itemsInStorage[NUMOFPRODUCTS];
+        for(int i =0 ;i<NUMOFPRODUCTS;i++){
+            if(fscanf(file,"%d", &itemsInStorage[i]) != 1){
+                printf(" IN SUPERMARKET FILE, Failed to read storage items %d.\n",i);
+            }
+        }
+        // check the storage array
+        int all_empty = 1;
+          for(int i =0 ;i<NUMOFPRODUCTS;i++){
+            if(itemsInStorage[i] != 0){
+                all_empty = 0;
+            }
+        }
+        if (all_empty){
+            cleanUp();
+            exit(1); 
+        }
+        if(checkOne == 1){
+            return itemsInStorage[index];
+        }
+}
